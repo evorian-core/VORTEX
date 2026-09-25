@@ -1,0 +1,50 @@
+VORTEX by EVORIAN / OMNIA
+MASTER SPECIFICATION
+
+PRODUCT
+VORTEX is a cinematic discovery and catalog platform for movies and series. TMDB is a metadata/catalog source; TMDB data does not itself grant streaming rights.
+
+ROUTES
+/
+/movies
+/series
+/my-list
+/continue-watching
+/releases
+/genres
+/movie/:id
+/series/:id
+/search
+/watch/:id
+/watch/:seriesId/:s/:e
+/profiles
+/profiles/edit
+/account
+/settings
+/help
+/privacy
+/terms
+/licenses
+/about
+
+HOME ORDER
+Hero Banner -> Continue Assistindo -> Em Alta -> Filmes Populares -> Séries Populares -> Lançamentos -> Recomendações -> Explorar por Gênero -> Disponíveis para Assistir.
+
+MEDIA MODEL
+Movie fields: id, tmdb_id, title, original_title, overview, poster_path, backdrop_path, rating, release_date, duration, genres, certification, director, cast, origin_country, original_language, streaming_sources.
+Series extends movie data with seasons_count, total_episodes and seasons. Episodes contain id, season_number, episode_number, title, overview, duration, air_date, still_path and watch_progress.
+
+PLAYER
+Controls include play/pause, +/-10 seconds, volume, subtitles/audio/quality when sources support them, fullscreen and progress persistence. Progress is saved periodically and on critical events. Completion is reached at more than 90%.
+
+PROFILES
+Up to five profiles per account. Lists, history, progress, recommendations and preferences are isolated by profile.
+
+RECOMMENDATIONS
+Initial recommendations use popular/trending and genre similarity. Future versions may use viewing history, completion, list contents, genres, actors, directors and time patterns.
+
+PRIVACY
+Minimum data collection. No selling of personal data. Secrets remain server-side.
+
+GOLDEN RULES
+Every visible option should work. Routes must be valid. The catalog model must scale. Local/mock data works before external data. Credentials remain private. Documentation remains available. No feature is complete without a test.
